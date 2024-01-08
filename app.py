@@ -10,7 +10,7 @@ def get_sql_data():
     password = 'N@veen123456'
 
     # Establish connection
-    connection_string = f'DRIVER={{SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password}'
+    connection_string = f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={server};DATABASE={database};UID={username};PWD={password}'
     conn = pyodbc.connect(connection_string)
 
     # Example query
