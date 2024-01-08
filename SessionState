@@ -1,0 +1,33 @@
+import streamlit as st
+
+def login():
+    st.title("Login")
+
+    # Define hardcoded credentials (for demo purposes)
+    valid_username = "naveen"
+    valid_password = "naveen"
+
+    # Input fields for username and password
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
+
+    # Check if the credentials are valid
+    if st.button("Login"):
+        if username == valid_username and password == valid_password:
+            st.success("Logged in as Naveen")
+            session_state.logged_in = True
+        else:
+            st.error("Invalid credentials")
+
+def main():
+    session_state = st.session_state
+    session_state.logged_in = False
+
+    if not session_state.logged_in:
+        login()
+    else:
+        st.title("Authenticated")
+        st.write("Welcome, Naveen!")
+
+if __name__ == "__main__":
+    main()
